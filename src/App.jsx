@@ -47,7 +47,7 @@ function App() {
   const handleSearch = (value) => {
     setQueryWord(value);
     console.log(value)
-    setPageCount(1); // Resetujemy numer strony przy każdym nowym wyszukiwaniuu
+    setPageCount(1); // Resetujemy numer strony przy każdym nowym wyszukiwaniu
   };
 
   const handleLoadMore = () => {
