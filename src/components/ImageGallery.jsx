@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query'
 import { getImages } from 'utils/getImages'
 import { ImageGalleryItem } from './ImageGalleryItem';
@@ -6,6 +6,7 @@ import { ImageGalleryItem } from './ImageGalleryItem';
 export const ImageGallery = ({ inputValue, page }) => {
   const query = useQuery({ queryKey: ['image-gallery', inputValue, page], queryFn: () => getImages(inputValue, page) })
   const { data: imageGallery, isLoading, error } = query
+  console.log(imageGallery)
 
 
   return <>

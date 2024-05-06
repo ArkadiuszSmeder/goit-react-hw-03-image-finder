@@ -29,8 +29,7 @@
 // export default App;
 
 import { QueryClient, QueryClientProvider } from 'react-query'
-import React, { useState, useEffect } from "react";
-import { nanoid } from "nanoid";
+import React, { useState } from "react";
 import { AppContainer } from "styled/styled-appContainer";
 import { ImageGallery } from './components/ImageGallery';
 import { Searchbar } from 'components/Searchbar';
@@ -47,7 +46,7 @@ function App() {
   const handleSearch = (value) => {
     setQueryWord(value);
     console.log(value)
-    setPageCount(1); // Resetujemy numer strony przy każdym nowym wyszukiwaniuuuuu
+    setPageCount(1); // Resetowanie numeru strony przy każdym nowym wyszukiwaniu
   };
 
   const handleLoadMore = () => {
