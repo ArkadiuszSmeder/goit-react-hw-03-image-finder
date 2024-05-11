@@ -43,7 +43,7 @@ import React, { useState } from "react";
 import { AppContainer } from "styled/styled-appContainer";
 import { ImageGallery } from './components/ImageGallery';
 import { Searchbar } from 'components/Searchbar';
-import { Button } from 'components/Button';
+// import { Button } from 'components/Button';
 
 
 const queryClient = new QueryClient()
@@ -59,16 +59,16 @@ function App() {
     setPageCount(1); // Resetowanie numeru strony przy każdym nowym wyszukiwaniu
   };
 
-  const handleLoadMore = () => {
-    setPageCount(prevPageCount => prevPageCount + 1);
-  };
+  // const handleLoadMore = () => {
+  //   setPageCount(prevPageCount => prevPageCount + 1);
+  // };
 
   return (
     <AppContainer>
       <Searchbar onSubmit={handleSearch}/>
       <QueryClientProvider client={queryClient}>
         <ImageGallery inputValue={queryWord} page={pageCount}/>
-        <Button onClick={handleLoadMore}/>
+        {/* <Button onClick={handleLoadMore}/> */}
       </QueryClientProvider>
     </AppContainer>
   );

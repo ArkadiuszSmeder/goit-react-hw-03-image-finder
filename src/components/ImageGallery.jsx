@@ -23,10 +23,11 @@ import React, { useState, useEffect } from 'react';
 import { useQuery } from 'react-query'
 import { getImages } from 'utils/getImages'
 import { ImageGalleryItem } from './ImageGalleryItem';
+import { Button } from 'components/Button';
 
 export const ImageGallery = ({ inputValue, page }) => {
   const [allImages, setAllImages] = useState([]); // Dodaje stan przechowujący wszystkie obrazy
-  // const [totalHits, setTotalHits] = useState(0);
+  const [totalHits, setTotalHits] = useState(0);
   const query = useQuery({
     queryKey: ['image-gallery', inputValue, page],
     queryFn: () => getImages(inputValue, page),
@@ -35,7 +36,7 @@ export const ImageGallery = ({ inputValue, page }) => {
       console.log(imageGallery.totalHits)
       // Dodaje nowe obrazy do istniejącej kolekcji obrazków
       setAllImages((prevImages) => [...prevImages, ...imageGallery.hits]);
-      // setTotalHits(imageGallery.totalHits); // Dodajemy totalHits do stanu
+      setTotalHits(imageGallery.totalHits);
     }
   });
 
@@ -55,6 +56,7 @@ export const ImageGallery = ({ inputValue, page }) => {
           <ImageGalleryItem key={id} id={id} webformatURL={webformatURL} />
         ))}
       </ul>
+      {totalHits > 12 && <Button/>}
     </>
   );
 }
