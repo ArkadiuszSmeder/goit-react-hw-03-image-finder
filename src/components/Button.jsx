@@ -6,6 +6,7 @@ export const Button = () => {
 
   const handleLoadMore = () => {
     setPageCount(prevPageCount => prevPageCount + 1);
+    console.log(pageCount);
   };
   
     return (
