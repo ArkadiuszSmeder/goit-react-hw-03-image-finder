@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export const Button = () => {
-
-  const [pageCount, setPageCount] = useState(1);
-
-  const handleLoadMore = () => {
-    setPageCount(prevPageCount => prevPageCount + 1);
-    console.log(pageCount);
-  };
+  export const Button = ({ onClick }) => {
+    
+      return (
+        <button type="button" onClick={onClick}>Load more</button>
+      );
+    };
   
-    return (
-      <button type="button" onClick={handleLoadMore}>Load more</button>
-    );
-  };
-
